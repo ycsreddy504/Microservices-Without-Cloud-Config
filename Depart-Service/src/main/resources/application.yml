@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: system
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  application:
+    name: DEPARTMENT-SERVICE
+server:
+  port: '8093'
+
+
+  
+eureka:
+  client:
+    register-with-eureka:  true
+    fetch-registry:  true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      instance:
+       hostname: localhost
